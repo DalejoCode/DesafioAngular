@@ -1,0 +1,32 @@
+<div class="mx-auto" style="width: 45px;" *ngIf="isLoading">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<ng-container *ngIf="showTable">
+  <table class="table table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Patronus</th>
+        <th scope="col">Age</th>
+        <th scope="col">Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let staffMember of staffMembers">
+        <th>{{ staffMember.name }}</th>
+        <td>{{ staffMember.patronus }}</td>
+        <td>{{ getAgeInfo(staffMember.age) }}</td>
+        <td><img [src]="staffMember.image" class="img-thumbnail" style="width: 200px;"></td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+
+<ng-container *ngIf="!showTable">
+  <div class="alert alert-danger">
+    Upps!!! An error appends while we made the request
+  </div>
+</ng-container>

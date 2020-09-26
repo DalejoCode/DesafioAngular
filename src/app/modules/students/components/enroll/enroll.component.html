@@ -1,0 +1,19 @@
+<form [formGroup]="studentForm" (ngSubmit)="submitRequest()">
+  <div class="form-group">
+    <label for="name">Your Name</label>
+    <input type="text" class="form-control" id="name" formControlName="name">
+  </div>
+  <div class="form-group">
+    <label for="patronus">Patronus</label>
+    <input type="text" class="form-control" id="patronus" formControlName="patronus">
+  </div>
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input type="text" class="form-control" id="age" formControlName="age">
+  </div>
+  <div class="form-group">
+    <label for="image">Image</label>
+    <input type="file" class="form-control" id="formImage" formControlName="image">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
